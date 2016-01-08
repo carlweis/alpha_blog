@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 	def index
 		@articles = Article.all
 	end
-	
+
 	def new
 		@article = Article.new
 	end
@@ -12,12 +12,20 @@ class ArticlesController < ApplicationController
 		@article = Article.new(article_params)
 		if @article.save
 			flash[:notice] = 'New Article Saved'
+			redirect_to @article
+		else
+			render 'new'
 		end
+	end
+
+	def show
+		@article = Article.find(params[:id])
 	end
 
 	private
 
 	def article_params
-		params.require(:article).permi(:title, :description)
+		params.require(:article).permit(:title, :description)
 	end
+
 end
