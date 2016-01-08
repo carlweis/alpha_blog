@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AlphaBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<%= render 'shared/flash' %>
-
-	<main class="container">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>AlphaBlog</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<%= render 'shared/flash' %>
+		<%= render 'shared/navigation' %>
+		<main class="<%= current_page?(root_path) ? '' : 'container' %>">
 		<%= yield %>
-	</main>
-</body>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<p class="text-muted">&copy;<%= Time.now.year %> Carl Weis. All Rights Reserved.</p>
+					</div>
+					<div class="col-md-4">
+						<nav>
+							<ul class="">
+								<li><%= link_to 'About', about_path %></li>
+								<li><%= link_to 'Blog', articles_path %></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>

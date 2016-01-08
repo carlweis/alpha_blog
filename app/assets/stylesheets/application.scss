@@ -1,9 +1,94 @@
+$navbar-default-bg: #fff;
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	margin-top: 50px;
+	margin-bottom: 60px;
+}
+#logo {
+	color: #222;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+	&:hover {
+		text-decoration: none;
+		color: #222;
+	}
+}
 .alert-notice {
 	background-color: $brand-primary;
 	color: #fff;
 	border-radius: 0;
+}
+
+// navigation styles
+.navbar-default .navbar-nav > li > a, .dropdown-menu > li > a {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-size: 0.875em;
+}
+// style all buttons
+.btn {
+	font-size: 0.875em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	border-radius: 4px;
+}
+.btn-clear {
+	background: transparent;
+	border: solid 2px #fff;
+	color: #fff;
+	&:hover {
+		background: rgba(255, 255, 255, 0.2);
+		color: #fff;
+	}
+}
+
+.jumbotron.home {
+	div.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0, 0.3);
+	}
+	position: relative;
+	padding: 8em 0 10em 0;
+	background: asset-url('home_hero.jpg') no-repeat;
+	background-size: cover;
+	h1 {
+		position: relative;
+		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
+	}
+	p {
+		position: relative;
+		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0, 0.3);
+	}
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  border-top: solid 1px #efefef;
+  background-color: #fff;
+  padding-top: 2em;
+  nav {
+  	ul {
+  		list-style: none;
+  		margin: 0;
+  		padding: 0;
+  		li {
+  			float: right;
+  			padding: 0 0.5em;
+  		}
+  	}
+  }
 }
