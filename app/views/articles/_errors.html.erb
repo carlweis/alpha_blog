@@ -1,10 +1,11 @@
 <% if @article.errors.any? %>
-<div id="error_explanation">
-	<h2>The following errors prevented the article from being created</h2>
+<div id="errors" class="col-sm-8 col-sm-offset-2">
+	<h3>The following errors prevented the article from being created</h3>
 	<ul>
 		<% @article.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
 		<% end %>
 	</ul>
 </div>
+<div class="clearfix"></div>
 <% end %>
